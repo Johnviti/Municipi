@@ -1,0 +1,40 @@
+{
+  "problems": [
+    {
+      "id": "problem-1",
+      "name": "Hipertensão Arterial",
+      "code": "I10",
+      "codeType": "CID-10",
+      "status": "Crônico (Ativo)",
+      "startDate": "10/05/2020",
+      "confirmation": "Confirmado"
+    },
+    {
+      "id": "problem-2",
+      "name": "Diabetes Mellitus Tipo 2",
+      "code": "E11",
+      "codeType": "CID-10",
+      "status": "Crônico (Ativo)",
+      "startDate": "15/03/2021",
+      "confirmation": "Confirmado"
+    },
+    {
+      "id": "problem-3",
+      "name": "Obesidade",
+      "code": "E66",
+      "codeType": "CID-10",
+      "status": "Crônico (Ativo)",
+      "startDate": "22/07/2021",
+      "confirmation": "Confirmado"
+    },
+    {
+      "id": "problem-4",
+      "name": "Dislipidemia",
+      "code": "E78",
+      "codeType": "CID-10",
+      "status": "Crônico (Ativo)",
+      "startDate": "05/09/2022",
+      "confirmation": "Confirmado"
+    }
+  ]
+}

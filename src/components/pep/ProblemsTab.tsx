@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -5,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Filter, Plus, Edit } from 'lucide-react';
 import { Patient } from '@/components/pep/PatientHeader';
+import problemsData from '@/data/problems.json';
 
 interface Problem {
   id: string;
@@ -21,16 +23,11 @@ interface ProblemsTabProps {
 }
 
 export function ProblemsTab({ patient }: ProblemsTabProps) {
-  const problems: Problem[] = patient.diagnoses.map((diagnosis, index) => ({
-    id: `problem-${index}`,
-    name: diagnosis.name,
-    code: diagnosis.code,
-    codeType: diagnosis.codeType,
-    status: "Crônico (Ativo)",
-    startDate: index === 0 ? "10/05/2020" : "15/03/2021",
-    confirmation: "Confirmado"
-  }));
-
+  const [problems, setProblems] = useState<Problem[]>([]);
+  
+  useEffect(() => {
+    setProblems(problemsData.problems);
+  }, [patient.id]); 
 
   return (
     <Card>
