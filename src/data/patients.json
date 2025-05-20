@@ -11,6 +11,9 @@
       "phone": "(82) 98765-4321",
       "address": "Rua das Flores, 123 - Centro, Piranhas/AL",
       "photo": "",
+      "photoUrl": "",
+      "recordNumber": "123456",
+      "email": "maria.silva@example.com", 
       "diagnoses": [
         {
           "name": "Hipertensão Arterial",
@@ -31,7 +34,18 @@
           "updatedAt": "15/05/2023"
         }
       ],
-      "allergies": ["Penicilina", "Dipirona"]
+      "allergies": [
+        {
+          "name": "Penicilina",
+          "severity": "Grave",
+          "reaction": "Anafilaxia"
+        },
+        {
+          "name": "Dipirona",
+          "severity": "Moderada",
+          "reaction": "Urticária"
+        }
+      ]
     },
     {
       "id": "2",
@@ -44,6 +58,9 @@
       "phone": "(82) 99876-5432",
       "address": "Av. Principal, 456 - Bairro Novo, Piranhas/AL",
       "photo": "",
+      "photoUrl": "",
+      "recordNumber": "654321",
+      "email": "joao.pereira@example.com",
       "diagnoses": [
         {
           "name": "Doença Pulmonar Obstrutiva Crônica",
@@ -55,7 +72,13 @@
           "updatedAt": "15/03/2023"
         }
       ],
-      "allergies": ["Sulfas"]
+      "allergies": [
+        {
+          "name": "Sulfas",
+          "severity": "Moderada",
+          "reaction": "Erupção cutânea"
+        }
+      ]
     }
   ]
 }

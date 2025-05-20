@@ -1,58 +1,54 @@
-import { TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  Calendar, 
-  FileText, 
-  Pill, 
-  Stethoscope, 
-  Activity, 
-  Ruler, 
-  TestTube,
-  FileCheck, 
-  Syringe, 
-  AlertTriangle, 
-  FileX
-} from 'lucide-react';
+import { TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Calendar,
+  FileText,
+  Activity,
+  Ruler,
+  Pill,
+  FileSearch,
+  File,
+  Syringe,
+  AlertTriangle,
+  Skull,
+  ClipboardList
+} from "lucide-react";
 
 interface PEPTabsProps {
   activeTab: string;
 }
 
 export function TabsListComponent({ activeTab }: PEPTabsProps) {
+  const tabs = [
+    { id: "timeline", label: "Histórico", icon: Calendar },
+    { id: "anamnesis", label: "Anamnese", icon: ClipboardList },
+    { id: "problems", label: "Problemas", icon: FileText },
+    { id: "vitals", label: "Sinais Vitais", icon: Activity },
+    { id: "anthropometrics", label: "Antropometria", icon: Ruler },
+    { id: "prescription", label: "Prescrição", icon: Pill },
+    { id: "exams", label: "Exames", icon: FileSearch },
+    { id: "documents", label: "Documentos", icon: File },
+    { id: "vaccines", label: "Imunizações", icon: Syringe },
+    { id: "allergies", label: "Alergias", icon: AlertTriangle },
+    { id: "death", label: "Óbito", icon: Skull },
+  ];
+
   return (
-    <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-11 h-auto">
-      <TabsTrigger value="timeline" className="flex items-center gap-1">
-        <Calendar size={16} /> Histórico
-      </TabsTrigger>
-      <TabsTrigger value="anamnesis" className="flex items-center gap-1">
-        <FileText size={16} /> Anamnese
-      </TabsTrigger>
-      <TabsTrigger value="problems" className="flex items-center gap-1">
-        <Stethoscope size={16} /> Problemas
-      </TabsTrigger>
-      <TabsTrigger value="vitals" className="flex items-center gap-1">
-        <Activity size={16} /> Sinais Vitais
-      </TabsTrigger>
-      <TabsTrigger value="anthropometrics" className="flex items-center gap-1">
-        <Ruler size={16} /> Antropometria
-      </TabsTrigger>
-      <TabsTrigger value="prescription" className="flex items-center gap-1">
-        <Pill size={16} /> Prescrição
-      </TabsTrigger>
-      <TabsTrigger value="exams" className="flex items-center gap-1">
-        <TestTube size={16} /> Exames
-      </TabsTrigger>
-      <TabsTrigger value="documents" className="flex items-center gap-1">
-        <FileCheck size={16} /> Documentos
-      </TabsTrigger>
-      <TabsTrigger value="vaccines" className="flex items-center gap-1">
-        <Syringe size={16} /> Imunizações
-      </TabsTrigger>
-      <TabsTrigger value="allergies" className="flex items-center gap-1">
-        <AlertTriangle size={16} /> Alergias
-      </TabsTrigger>
-      <TabsTrigger value="death" className="flex items-center gap-1">
-        <FileX size={16} /> Óbito
-      </TabsTrigger>
+    <TabsList className="grid grid-cols-11 h-auto bg-gray-100 p-1 rounded-lg">
+      {tabs.map((tab) => {
+        const Icon = tab.icon;
+        return (
+          <TabsTrigger
+            key={tab.id}
+            value={tab.id}
+            className={`flex flex-col items-center py-2 px-1 gap-1 ${
+              activeTab === tab.id ? "data-[state=active]:bg-white shadow-sm" : ""
+            }`}
+          >
+            <Icon className={`h-4 w-4 ${activeTab === tab.id ? "text-blue-600" : "text-gray-600"}`} />
+            <span className="text-xs font-medium">{tab.label}</span>
+          </TabsTrigger>
+        );
+      })}
     </TabsList>
   );
 }

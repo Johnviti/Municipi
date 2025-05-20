@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
-import { PatientHeader } from "@/components/pep/PatientHeader";
+import { PatientHeader,PatientAllergy } from "@/components/pep/PatientHeader";
 import { ProblemsTab } from "@/components/pep/ProblemsTab";
 import { TabsListComponent } from "@/components/layout/Tabs";
 import { Tabs, TabsContent } from '@/components/ui/tabs';
@@ -8,14 +8,16 @@ import { Button } from '@/components/ui/button';
 import patientData from "@/data/patients.json";
 
 export default function PEP() {
-  const defaultPatient = patientData.patients[0];
+  const defaultPatient = {
+    ...patientData.patients[0],
+    allergies: patientData.patients[0].allergies as PatientAllergy[]
+  };
   
   const handlePhotoClick = () => {
-    console.log("Editar foto do paciente");
   };
 
   const [activeTab, setActiveTab] = useState("problems");
-  const [currentPatient, setCurrentPatient] = useState(defaultPatient);
+  const [currentPatient] = useState(defaultPatient);
   
   const handleTabChange = (value: string) => {
     setActiveTab(value);
@@ -42,7 +44,9 @@ export default function PEP() {
 
           {/* Problemas e Diagnósticos */}
           <TabsContent value="problems" className="mt-4">
-            <ProblemsTab patient={currentPatient} />
+            <ProblemsTab 
+              patient={currentPatient} 
+            />
           </TabsContent>
 
           {/* Sinais Vitais */}

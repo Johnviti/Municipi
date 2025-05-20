@@ -348,32 +348,6 @@ export const SearchProblemModal = ({ onAddProblem }: ProblemModalProps) => {
   const [searchResults, setSearchResults] = useState<PatientDiagnosis[]>([]);
   const [codeType, setCodeType] = useState<string>("CID-10");
 
-  // Busca problemas com base no termo de busca
-  const handleSearch = () => {
-    if (!searchTerm.trim()) {
-      setSearchResults([]);
-      return;
-    }
-
-    const codeList = codeType === "CID-10" ? diagnosisCodes.cid10 : diagnosisCodes.ciap2;
-    
-    // Filtra resultados baseado no termo de busca
-    const filtered = codeList
-      .filter(item => 
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.code.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      .map(item => ({
-        name: item.name,
-        code: item.code,
-        codeType: codeType,
-        isActive: true,
-        registeredAt: new Date().toLocaleDateString('pt-BR'),
-        updatedAt: new Date().toLocaleDateString('pt-BR')
-      }));
-
-    setSearchResults(filtered);
-  };
 
   const handleSelectProblem = (problem: PatientDiagnosis) => {
     if (onAddProblem) {
@@ -418,7 +392,7 @@ export const SearchProblemModal = ({ onAddProblem }: ProblemModalProps) => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="flex-1"
             />
-            <Button type="button" onClick={handleSearch}>
+            <Button type="button">
               Buscar
             </Button>
           </div>

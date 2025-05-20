@@ -21,8 +21,6 @@ interface ProblemsTabProps {
 }
 
 export function ProblemsTab({ patient }: ProblemsTabProps) {
-  // In a real app, you would fetch problems from an API
-  // For now, we'll use the patient's diagnoses as a starting point
   const problems: Problem[] = patient.diagnoses.map((diagnosis, index) => ({
     id: `problem-${index}`,
     name: diagnosis.name,
@@ -33,25 +31,6 @@ export function ProblemsTab({ patient }: ProblemsTabProps) {
     confirmation: "Confirmado"
   }));
 
-  const handleAddProblem = () => {
-    console.log("Add new problem");
-    // In a real app, you would open a modal or navigate to a form
-  };
-
-  const handleEditProblem = (problemId: string) => {
-    console.log("Edit problem", problemId);
-    // In a real app, you would open a modal or navigate to a form
-  };
-
-  const handleFilterProblems = () => {
-    console.log("Filter problems");
-    // In a real app, you would implement filtering logic
-  };
-
-  const handleSearchProblems = (searchTerm: string) => {
-    console.log("Search problems", searchTerm);
-    // In a real app, you would implement search logic
-  };
 
   return (
     <Card>
@@ -62,19 +41,16 @@ export function ProblemsTab({ patient }: ProblemsTabProps) {
             <Input 
               placeholder="Buscar problema ou diagnóstico" 
               className="w-[300px]" 
-              onChange={(e) => handleSearchProblems(e.target.value)}
             />
             <Button 
               variant="outline" 
               className="gap-1"
-              onClick={handleFilterProblems}
             >
               <Filter size={16} /> Filtrar
             </Button>
           </div>
           <Button 
             className="gap-1"
-            onClick={handleAddProblem}
           >
             <Plus size={16} /> Adicionar Problema
           </Button>
@@ -109,7 +85,6 @@ export function ProblemsTab({ patient }: ProblemsTabProps) {
                     variant="ghost" 
                     size="sm" 
                     className="h-8 w-8 p-0"
-                    onClick={() => handleEditProblem(problem.id)}
                   >
                     <Edit className="h-4 w-4" />
                   </Button>

@@ -13,22 +13,28 @@ export interface PatientDiagnosis {
   name: string;
   code: string;
   codeType: string;
+  isActive: boolean; 
+  notes: string;     
+  registeredAt: string; 
+  updatedAt: string;    
 }
 
 export interface Patient {
   id: string;
   name: string;
-  recordNumber: string;
-  gender: string;
-  age: number;
   birthDate: string;
+  age: number;
+  gender: string;
   cpf: string;
   cns: string;
   phone: string;
+  address: string;
+  photo?: string;
+  photoUrl?: string;
+  diagnoses?: PatientDiagnosis[];
+  allergies?: PatientAllergy[];
+  recordNumber: string; 
   email: string;
-  diagnoses: PatientDiagnosis[];
-  allergies: PatientAllergy[];
-  photoUrl?: string | null;
 }
 
 interface PatientHeaderProps {
