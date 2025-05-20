@@ -1,0 +1,27 @@
+{
+  "professional": {
+    "name": "Priscilla Santos",
+    "role": "Médica",
+    "specialty": "Clínica Geral",
+    "unit": "UBS Maria do Carmo",
+    "hasMultipleUnits": true,
+    "units": [
+      {
+        "id": 1,
+        "name": "UBS Maria do Carmo"
+      },
+      {
+        "id": 2,
+        "name": "Hospital Municipal"
+      }
+    ],
+    "location": {
+      "city": "PIRANHAS",
+      "state": "ALAGOAS"
+    },
+    "weather": {
+      "temperature": 28,
+      "condition": "sunny"
+    }
+  }
+}
