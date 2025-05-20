@@ -1,0 +1,61 @@
+{
+  "patients": [
+    {
+      "id": "1",
+      "name": "Maria da Silva Santos",
+      "birthDate": "15/05/1975",
+      "age": 48,
+      "gender": "Feminino",
+      "cpf": "123.456.789-00",
+      "cns": "123456789012345",
+      "phone": "(82) 98765-4321",
+      "address": "Rua das Flores, 123 - Centro, Piranhas/AL",
+      "photo": "",
+      "diagnoses": [
+        {
+          "name": "Hipertensão Arterial",
+          "code": "I10",
+          "codeType": "CID-10",
+          "isActive": true,
+          "notes": "Paciente com histórico familiar de hipertensão",
+          "registeredAt": "12/05/2023",
+          "updatedAt": "15/05/2023"
+        },
+        {
+          "name": "Diabetes Mellitus Tipo 2",
+          "code": "E11",
+          "codeType": "CID-10",
+          "isActive": true,
+          "notes": "Diagnóstico recente, iniciando tratamento",
+          "registeredAt": "12/05/2023",
+          "updatedAt": "15/05/2023"
+        }
+      ],
+      "allergies": ["Penicilina", "Dipirona"]
+    },
+    {
+      "id": "2",
+      "name": "João Pereira Oliveira",
+      "birthDate": "22/08/1962",
+      "age": 61,
+      "gender": "Masculino",
+      "cpf": "987.654.321-00",
+      "cns": "987654321098765",
+      "phone": "(82) 99876-5432",
+      "address": "Av. Principal, 456 - Bairro Novo, Piranhas/AL",
+      "photo": "",
+      "diagnoses": [
+        {
+          "name": "Doença Pulmonar Obstrutiva Crônica",
+          "code": "J44",
+          "codeType": "CID-10",
+          "isActive": true,
+          "notes": "Paciente tabagista há 40 anos",
+          "registeredAt": "10/01/2023",
+          "updatedAt": "15/03/2023"
+        }
+      ],
+      "allergies": ["Sulfas"]
+    }
+  ]
+}

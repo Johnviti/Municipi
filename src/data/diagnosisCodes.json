@@ -1,0 +1,26 @@
+{
+  "cid10": [
+    { "code": "I10", "name": "Hipertensão Arterial" },
+    { "code": "E11", "name": "Diabetes Mellitus Tipo 2" },
+    { "code": "J45", "name": "Asma" },
+    { "code": "E66", "name": "Obesidade" },
+    { "code": "F32", "name": "Depressão" },
+    { "code": "J44", "name": "Doença Pulmonar Obstrutiva Crônica" },
+    { "code": "M54", "name": "Dorsalgia" },
+    { "code": "K29", "name": "Gastrite e Duodenite" },
+    { "code": "G43", "name": "Enxaqueca" },
+    { "code": "N39", "name": "Outros transtornos do trato urinário" }
+  ],
+  "ciap2": [
+    { "code": "K86", "name": "Hipertensão sem complicações" },
+    { "code": "T90", "name": "Diabetes não insulino-dependente" },
+    { "code": "R96", "name": "Asma" },
+    { "code": "T82", "name": "Obesidade" },
+    { "code": "P76", "name": "Perturbações depressivas" },
+    { "code": "R95", "name": "Doença Pulmonar Obstrutiva Crônica" },
+    { "code": "L03", "name": "Dor lombar" },
+    { "code": "D87", "name": "Alterações funcionais do estômago" },
+    { "code": "N01", "name": "Cefaleia" },
+    { "code": "U71", "name": "Cistite/outra infecção urinária" }
+  ]
+}

@@ -5,7 +5,7 @@ import { ProblemsTab } from "@/components/pep/ProblemsTab";
 import { TabsListComponent } from "@/components/layout/Tabs";
 import { Tabs, TabsContent } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
-import patientData from "@/data/patientData.json";
+import patientData from "@/data/patients.json";
 
 export default function PEP() {
   const defaultPatient = patientData.patients[0];
